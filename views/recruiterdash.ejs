@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="recdash.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href="#">HireSpherer</a></div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SignUp</a></li>
+            <li>
+                <a href="/login">Profile</a></li>
+
+            <li><a href="/view-jobs">View all job</a></li>
+
+        </ul>
+    </nav>
+    <br><br><br>
+    <h1>Welcome to the Recruiter Dashboard</h1>
+    <!-- Add your recruiter dashboard content here -->
+    <section class="overview">
+        <h2>Dashboard Overview</h2>
+        <p>Here you can manage your job postings, view applicants, and track your job posting performance.</p>
+    </section>
+
+    <section class="actions">
+        <div class="action">
+            <h3>Post a New Job</h3>
+            <p>Looking for new talent? Post a job now and reach out to potential candidates.</p>
+            <a href="/post-job" class="btn">Post a Job</a>
+        </div>
+
+        <div class="action">
+            <h3>View Job Listings</h3>
+            <p>Check out all the jobs you've posted so far. Manage and update them as needed.</p>
+            <a href="/recruiter-jobs" class="btn">View Jobs</a>
+        </div>
+
+        <div class="action">
+            <h3>View Applicants</h3>
+            <p>See who has applied to your job postings. Review their profiles and contact them directly.</p>
+       
+            
+            <!-- <a href="/view-applicants/:jobId" class="btn">View Applicants</a> -->
+            
+        </div>
+    </section>
+    <a href="/logout"><button>Logout</button></a>
+        <!-- <a href="/applied-jobs"><button>view your application</button></a></div> -->
+
+</body>
+
+</html>

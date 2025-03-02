@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viewapplicants</title>
+    <link rel="stylesheet" type="text/css" href="/applicantsview.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="dash.css" /> -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Applicants for
+            <%= job.title %>
+        </h1>
+        <% if (job.applicants && job.applicants.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Education</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% job.applicants.forEach(function(applicant) { %>
+                        <tr>
+                            <td>
+                                <%= applicant.name %>
+                            </td>
+                            <td>
+                                <%= applicant.email %>
+                            </td>
+                            <td>
+                                <!-- <%= applicant.education %> -->
+                                <%= applicant.education ? `${applicant.education.degree} in ${applicant.education.fieldOfStudy} from ${applicant.education.school}` : 'N/A' %>
+                            </td>
+                            <td>
+                               
+                                <%= Array.isArray(applicant.skills) ? applicant.skills.join(', ') : 'N/A' %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <p>No applicants have applied to this job yet.</p>
+                <% } %>
+
+                    <div class="button-container">
+                        <a href="/recruiterdash" class="back-button">Back to Dashboard</a>
+                    </div>
+    </div>
+</body>
+
+</html>

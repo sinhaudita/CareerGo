@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="recjobs.css" />
+</head>
+
+<body>
+
+    <div class="jb">
+        <h1>Welcome,
+            <%= username %>
+        </h1>
+
+        <h2>Your Job Listings</h2>
+
+        <% if (jobs.length > 0) { %>
+            <ul>
+                <% jobs.forEach(function(job) { %>
+                    <li>
+                        <h3>
+                            <%= job.title %>
+                        </h3>
+                        <p><strong>Location:</strong>
+                            <%= job.location %>
+                        </p>
+                        <p><strong>Salary:</strong>
+                            <%= job.salary %>
+                        </p>
+                        <p><strong>Skills Required:</strong>
+                            <%= job.skills  %>
+                        </p>
+                        <p><strong>Last Date to Apply:</strong>
+                            <%= job.deadline.toDateString() %>
+                        </p>
+                        <a href="/view-applicants/<%= job._id %>" class="btn">View Applicants</a>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } else { %>
+                <p>You have not posted any jobs yet.</p>
+                <% } %>
+    </div>
+    <div class="button-container">
+        <a href="/recruiterdash" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

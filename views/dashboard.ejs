@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dash.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href="#">HireSpherer</a></div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SignUp</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href=" /view-jobs">View all job</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Dashboard</h1>
+
+        <% if (details) { %>
+            <h2>Welcome,
+                <%= details.fullName %>!</h2>
+            <p><strong>Email:</strong>
+                <%= details.email %>
+            </p>
+            <p><strong>Phone Number:</strong>
+                <%= details.phone %>
+            </p>
+            <p><strong>Location:</strong>
+                <%= details.location %>
+            </p>
+
+            <h3>Education</h3>
+            <p><strong>School/University:</strong>
+                <%= details.education.school %>
+            </p>
+            <p><strong>Degree:</strong>
+                <%= details.education.degree %>
+            </p>
+            <p><strong>Field of Study:</strong>
+                <%= details.education.fieldOfStudy %>
+            </p>
+            <p><strong>Start Date:</strong>
+                <%= details.education.startDate.toISOString().split('T')[0] %>
+            </p>
+            <p><strong>End Date:</strong>
+                <%= details.education.endDate ? details.education.endDate.toISOString().split('T')[0] : 'Ongoing' %>
+            </p>
+            <p><strong>Activities and Societies:</strong>
+                <%= details.education.activities %>
+            </p>
+            <p><strong>Achievements:</strong>
+                <%= details.education.achievements %>
+            </p>
+
+            <h3>Professional Details</h3>
+            <p><strong>Years of Experience:</strong>
+                <%= details.experience %>
+            </p>
+            <p><strong>Skills:</strong>
+                <%= details.skills %>
+            </p>
+            <% } else { %>
+                <p>No details found. Please complete your profile.</p>
+                <% } %>
+
+                    <div class="btn"><a href="/logout"><button>Logout</button></a>
+                        <a href="/applied-jobs"><button>view your application</button></a></div>
+    </div>
+</body>
+
+</html>

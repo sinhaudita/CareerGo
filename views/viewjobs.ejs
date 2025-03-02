@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="view.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href="#">HireSpherer</a></div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SignUp</a></li>
+            <li>
+                <a href="/login">Login</a></li>
+
+            <li><a href="/view-jobs">View all job</a></li>
+
+        </ul>
+    </nav>
+    <h2 class="title">All Jobs</h2>
+    <div class="box">
+
+
+
+        <div class="view">
+
+            <ul>
+                <% jobs.forEach(job => { %>
+                    <li>
+                        <div class="desc">
+                            <h3>
+                                <%= job.title %>
+                            </h3>
+                            <p>
+                                <%= job.description %>
+                            </p>
+                            <p><strong>Company:</strong>
+                                <%= job.company %>
+                            </p>
+                            <p><strong>Location:</strong>
+                                <%= job.location %>
+                            </p>
+                            <p><strong>Salary:</strong>
+                                <%= job.salary ? `${job.salary}` : 'N/A' %>
+                            </p>
+
+                            <p><strong>Skills:</strong>
+                                <%= job.skills  %>
+                            </p>
+
+
+                            <p><strong>Apply By:</strong>
+                                <%= job.deadline %>
+                            </p>
+                        </div>
+                        <div class="btn">
+
+                            <form action="/apply-jobs/<%= job._id %>" method="POST">
+
+
+                                <button type="submit" class="apply">Apply</button>
+
+                            </form>
+                        </div>
+                    </li>
+                    <% }) %>
+            </ul>
+
+        </div>
+        <!-- <div class="btn"> -->
+
+        <!-- </div> -->
+    </div>
+
+</body>
+
+</html>

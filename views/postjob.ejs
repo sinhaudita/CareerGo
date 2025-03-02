@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="post.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href="#">HireSpherer</a></div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SignUp</a></li>
+            <li><a href="/login">Login</a></li>
+
+            <li><a href="/view-jobs">View all job</a></li>
+
+        </ul>
+    </nav>
+    <form action="/jobs" method="POST">
+        <label for="title">Job Title:</label>
+        <input type="text" name="title" required>
+        <br>
+
+        <label for="description">Job Description:</label>
+        <textarea name="description" required></textarea>
+        <br>
+
+        <label for="company">Company:</label>
+        <input type="text" name="company" required>
+        <br>
+
+        <label for="location">Location:</label>
+        <input type="text" name="location" required>
+        <br>
+
+        <label for="salary">Salary:</label>
+        <input type="number" name="salary">
+        <br>
+        <label for="skills">Skills Required:</label>
+        <input type="text" id="skills" name="skills" required>
+        <br>
+
+        <label for="deadline">Last Application Date:</label>
+        <input type="date" id="deadline" name="deadline" required>
+        <br><br>
+        <button type="submit">Post Job</button>
+        <br>
+    </form>
+
+</body>
+
+</html>

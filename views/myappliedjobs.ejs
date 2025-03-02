@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="details.css" />
+    <link rel="stylesheet" type="text/css" href="myjobs.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="#">HireSpherer</a></div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SignUp</a></li>
+            <li>
+                <a href="/login">Login</a></li>
+            <li><a href=" # ">Post a job</a></li>
+            <li><a href="# ">View all job</a></li>
+            <li><a href="# ">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <h2 class="title">Your Applied Jobs</h2>
+    <div class="box">
+        <div class="view">
+            <ul class="jobbie">
+                <% if (appliedJobs.length > 0) { %>
+                    <% appliedJobs.forEach(job => { %>
+                    <!-- <div class="display"> -->
+                        <li class="jobby">
+                            <div class="desc">
+                                <h3 class="space"><%= job.title %></h3>
+                                <p class="space"><%= job.description %></p>
+                                <p class="space"><strong>Company:</strong> <%= job.company %></p>
+                                <p class="space"><strong>Location:</strong> <%= job.location %></p>
+                                <p class="space"><strong>Salary:</strong> <%= job.salary ? `${job.salary}` : 'N/A' %></p>
+                                <p ><strong>Skills:</strong> <%= job.skills %></p>
+                                
+                            </div>
+                        </li>
+                    <!-- </div> -->
+                    <% }) %>
+                <% } else { %>
+                    <p class="last">You haven't applied for any jobs yet.</p>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

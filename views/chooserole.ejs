@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Role</title>
+    <link rel="stylesheet" type="text/css" href="choose.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href="#">HireSpherer</a></div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SignUp</a></li>
+            <li>
+                <a href="/login">Login</a></li>
+
+            <li><a href="/view-jobs">View all job</a></li>
+
+        </ul>
+    </nav>
+
+    <form action="/choose-role" method="post">
+        <div class="container">
+            <input type="hidden" name="email" value="<%= email %>">
+            <div class="side left-side">
+                <div class="line">
+                    <h1>Want to Recruit?</h1>
+                </div>
+                <button type="submit" name="role" value="recruiter" class="role-button">Proceed as Recruiter</button>
+            </div>
+            <div class="side right-side">
+                <div class="line">
+                    <h1>Want to be Recruited?</h1>
+                </div>
+                <button type="submit" name="role" value="seeker" class="role-button">Proceed as Job Seeker</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
+
+</body>
+
+</html>
